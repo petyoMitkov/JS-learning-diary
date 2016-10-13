@@ -1,1 +1,1 @@
-# JS-learning-diary
+# JavaScript Exercises

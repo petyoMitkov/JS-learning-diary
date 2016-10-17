@@ -9,9 +9,9 @@ element represents the number n, and the second – the number k.
 The output is printed on the console on a single line, separated by space.
 
 Examples
-Input          Output
-['6', '3']     1 1 2 4 7 13
-['8', '2']     1 1 2 3 5 8 13 21
+Input	      Output
+['6', '3']	  1 1 2 4 7 13		
+['8', '2']	  1 1 2 3 5 8 13 21
  */
 
 function solve([n, k]){

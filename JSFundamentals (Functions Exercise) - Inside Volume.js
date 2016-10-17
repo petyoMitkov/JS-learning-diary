@@ -1,4 +1,4 @@
-/*	Inside Volume
+/*    Inside Volume
 Write a JS function that determines whether a point is inside 
 the volume, defined by the box, shown on the right.The input comes 
 as an array of string elements that need to be parsed as numbers. 
@@ -7,11 +7,11 @@ The output should be printed to the console on a new line for each point.
 Print inside if the point lies inside the volume and outisde otherwise.
 
 Examples
-    Input   	        Output
-[8, 20, 22]             outside
-[13.1, 50, 31.5,        inside
-50, 80, 50,             inside
--5, 18, 43]             outside
+Input              Output
+[8, 20, 22]        outside
+[13.1, 50, 31.5,   inside
+50, 80, 50,        inside
+-5, 18, 43]        outside
 */
 
 function insideVolume(input){

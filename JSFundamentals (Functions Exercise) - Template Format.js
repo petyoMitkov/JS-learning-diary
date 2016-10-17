@@ -1,4 +1,4 @@
-/*	Template format
+/*    Template format
 Write a JS program that receives data about a quiz and prints it
 formatted as an XML document. The data comes as pairs of question-answer
 entries. The format of the document should be as follows:

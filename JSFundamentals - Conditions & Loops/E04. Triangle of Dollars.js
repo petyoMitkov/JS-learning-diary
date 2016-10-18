@@ -6,7 +6,7 @@ The output consists of n text lines like shown below.
 
 Examples
 Input	Output
-4	    $
+4       $
         $$
         $$$
         $$$$

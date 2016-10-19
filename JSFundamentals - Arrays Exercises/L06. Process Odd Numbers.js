@@ -17,8 +17,8 @@ function processOddNumbers(input){
 			result.unshift(input[i] * 2);
 		}
 	}
-	/*	short way
-	let result = arr
+     /* short way
+     let result = arr
     .filter((num, i) => i % 2 == 1)
     .map(x => 2*x)
     .reverse(); 

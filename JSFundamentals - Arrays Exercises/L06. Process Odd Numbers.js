@@ -17,17 +17,12 @@ function processOddNumbers(input){
 			result.unshift(input[i] * 2);
 		}
 	}
-<<<<<<< HEAD
-    /*short way
-    let result = arr
-=======
-     /* short way
-     let result = arr
->>>>>>> ba16b128e2356a706b82b360fe72810a7c98627b
-    .filter((num, i) => i % 2 == 1)
-    .map(x => 2*x)
-    .reverse(); 
-    */
+       /* short way
+       let result = arr
+       .filter((num, i) => i % 2 == 1)
+       .map(x => 2*x)
+       .reverse(); 
+       */
 	console.log(result.join(" "));
 }
 processOddNumbers(['3', '0', '10', '4', '7', '3']);

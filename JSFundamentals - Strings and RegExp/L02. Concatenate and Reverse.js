@@ -12,10 +12,10 @@ Input                    Output
 */
 
 function concatenateAndReverse(arr){
-	let allStrings = arr.join('');          //"Iamstudent"
-	let arrChars = Array.from(allStrings);  //["I","a","m","s","t","u","d","e","n","t"]
-	let revArrChars = arrChars.reverse();   //["t","n","e","d","u","t","s","m","a","I"]
-	let joinArrToStr = revArrChars.join('');//"tnedutsmaI"
-	return joinArrToStr;
+    let allStrings = arr.join('');          //"Iamstudent"
+    let arrChars = Array.from(allStrings);  //["I","a","m","s","t","u","d","e","n","t"]
+    let revArrChars = arrChars.reverse();   //["t","n","e","d","u","t","s","m","a","I"]
+    let joinArrToStr = revArrChars.join('');//"tnedutsmaI"
+    return joinArrToStr;
 }
 concatenateAndReverse(['I', 'am', 'student']);

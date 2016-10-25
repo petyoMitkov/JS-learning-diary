@@ -17,16 +17,16 @@ Input:                               Output:
 */
 
 function aggregateTable(arr){
-    let sum = 0, list = [];
-    for (let e of arr){
-        let line = e.split("|");             //["", " Sofia           ", " 300"]...
-        let town = line[1].trim();           //" Sofia           " => "Sofia"
-        let income = Number(line[2].trim()); //" 300" => 300
-        list.push(town);
-        sum += income;
-    }
-    console.log(list.join(", ") + "\n" + sum);
+	let sum = 0, list = [];
+	for (let e of arr){
+		let line = e.split("|");             //["", " Sofia           ", " 300"]...
+		let town = line[1].trim();           //" Sofia           " => "Sofia"
+		let income = Number(line[2].trim()); //" 300" => 300
+		list.push(town);
+		sum += income;
+	}
+	console.log(list.join(", ") + "\n" + sum);
 }
 aggregateTable(['| Sofia           | 300',
-                '| Veliko Tarnovo  | 500',
-                '| Yambol          | 275']);
+				'| Veliko Tarnovo  | 500',
+				'| Yambol          | 275']);

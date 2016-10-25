@@ -8,7 +8,7 @@ The output should be a single line containing the converted string.
 
 Examples
 Input                   Output
-['Hi, how are you?']	HI, HOW, ARE, YOU
+['Hi, how are you?']    HI, HOW, ARE, YOU
 
 */
 

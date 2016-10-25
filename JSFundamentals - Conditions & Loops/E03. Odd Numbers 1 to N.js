@@ -5,21 +5,21 @@ of n. The number n will be an integer in the range [1 … 100 000].
 The output should hold the expected odd numbers, each at a separate line.
 
 Examples
-Input	Output
-7	    1
+Input   Output
+7       1
         3
         5
         7
 */
 
 function solve(a){
-	a = Number(a);
-	let result = "";
+    a = Number(a);
+    let result = "";
 
-	for (let i = 0; i <= a; i++) {
-		if (i % 2 != 0) {
-			console.log(i);
-		}
-	}
+    for (let i = 0; i <= a; i++) {
+        if (i % 2 != 0) {
+            console.log(i);
+        }
+    }
 }
 solve(["10"]);

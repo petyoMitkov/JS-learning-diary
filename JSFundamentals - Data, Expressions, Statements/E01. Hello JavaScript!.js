@@ -1,10 +1,10 @@
 function helloJS(inputName){
-	console.log("Hello, " + inputName + ", I am JavaScript!");
+    console.log("Hello, " + inputName + ", I am JavaScript!");
 }
 helloJS(["Bill Gates"]);
 
 /*
-	Input	    Output
-    [Pesho]	    Hello, Pesho, I am JavaScript!
+    Input       Output
+    [Pesho]     Hello, Pesho, I am JavaScript!
 
  */

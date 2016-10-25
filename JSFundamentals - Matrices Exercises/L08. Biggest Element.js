@@ -16,12 +16,12 @@ Input            Output
 */
 
 function biggestElement(matrix){
-	//convert arr of strings to matrix of numbers
-	let input = matrix.map(row => row.split(" ").map(Number)); 
-	let biggestNum = Number.NEGATIVE_INFINITY;
-	input.forEach(
-		row => row.forEach(
-			element => biggestNum = Math.max(biggestNum, element))); 
-	console.log(biggestNum);
+    //convert arr of strings to matrix of numbers
+    let input = matrix.map(row => row.split(" ").map(Number)); 
+    let biggestNum = Number.NEGATIVE_INFINITY;
+    input.forEach(
+        row => row.forEach(
+            element => biggestNum = Math.max(biggestNum, element))); 
+    console.log(biggestNum);
 }
 biggestElement(['20 50 10', '8 33 145']);

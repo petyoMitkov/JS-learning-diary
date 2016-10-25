@@ -9,8 +9,8 @@ Input                             Output
  */
 
 function smallestTwoNumbers(input){
-	input.sort((a,b) => a-b);
-	let result = input.slice(0, 2);
-	console.log(result.join(" "));
+    input.sort((a,b) => a-b);
+    let result = input.slice(0, 2);
+    console.log(result.join(" "));
 }
 smallestTwoNumbers(['30', '15', '50', '5']);

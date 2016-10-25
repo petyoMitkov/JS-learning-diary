@@ -24,18 +24,18 @@ remove
 */
 
 function addAndRemoveElements(input){
-	let newArr = [];
-	let counter = 0;
-	for (let element of input){
-		if (element == "add") {
-			newArr.push(++counter);
-		} else if (element == "remove"){ 
-			newArr.pop();
-			counter++;
-		}
-	}
-	let result = (newArr.length == 0)? "Empty" : newArr.join("\n");
-	console.log(result);
+    let newArr = [];
+    let counter = 0;
+    for (let element of input){
+        if (element == "add") {
+            newArr.push(++counter);
+        } else if (element == "remove"){ 
+            newArr.pop();
+            counter++;
+        }
+    }
+    let result = (newArr.length == 0)? "Empty" : newArr.join("\n");
+    console.log(result);
 }
 addAndRemoveElements(["add", "add", "remove", "add", "add"]);
 addAndRemoveElements(["remove", "remove", "remove"]);

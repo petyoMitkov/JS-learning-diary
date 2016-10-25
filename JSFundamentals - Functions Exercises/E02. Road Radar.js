@@ -11,52 +11,52 @@ to be parsed as a number, the second element is the area where.
 The output should be printed to the console. Note in certain cases there will be no output.
 
 Examples
-input		 	Output
-[40, city]	
-[21, residential] 	speeding
-[120, interstate] 	excessive speeding
-[200, motorway]		reckless driving
+input           Output
+[40, city]  
+[21, residential]   speeding
+[120, interstate]   excessive speeding
+[200, motorway]     reckless driving
  */
 /* Task logic
-motorway 	130 km/h 	
-interstate  90 km/h 	
-city 		50 km/h
+motorway    130 km/h    
+interstate  90 km/h     
+city        50 km/h
 residential 20 km/h
 
-0  <= 20  	speeding
-20 <= 40 	excessice spreeding 
-for > 40  	reckless driving
+0  <= 20    speeding
+20 <= 40    excessice spreeding 
+for > 40    reckless driving
  */
 
 function roadRadar([speed, area]){
 
-	let infraction = getInfraction(speed, getLimitByArea(area));
-	if (infraction) console.log(infraction);
+    let infraction = getInfraction(speed, getLimitByArea(area));
+    if (infraction) console.log(infraction);
 
-	//Returns speed limit in the given area
-	function getLimitByArea(area){          
-		switch(area){
-			case "motorway": return 130;
-			case "interstate": return 90;
-			case "city": return 50;
-			case "residential": return 20;
-		}
-	}	
-	//Returns string as result of subtraction between 
-	//speed and area limit (comes from getLimitByArea())
-	function getInfraction(speed, func){   
-		let overSpeed = speed - func;		
-		if (overSpeed <= 0) {
-			return false;
-		} else {
-			if (overSpeed > 0 && overSpeed <= 20) 
-				return "speeding";
-			if (overSpeed > 20 && overSpeed <= 40) 
-				return "excessive speeding";
-			if (overSpeed > 40) 
-				return "reckless driving";
-		}
-	}
+    //Returns speed limit in the given area
+    function getLimitByArea(area){          
+        switch(area){
+            case "motorway": return 130;
+            case "interstate": return 90;
+            case "city": return 50;
+            case "residential": return 20;
+        }
+    }   
+    //Returns string as result of subtraction between 
+    //speed and area limit (comes from getLimitByArea())
+    function getInfraction(speed, func){   
+        let overSpeed = speed - func;       
+        if (overSpeed <= 0) {
+            return false;
+        } else {
+            if (overSpeed > 0 && overSpeed <= 20) 
+                return "speeding";
+            if (overSpeed > 20 && overSpeed <= 40) 
+                return "excessive speeding";
+            if (overSpeed > 40) 
+                return "reckless driving";
+        }
+    }
 }
 roadRadar([40, "city"]);
 roadRadar([21, "residential"]);

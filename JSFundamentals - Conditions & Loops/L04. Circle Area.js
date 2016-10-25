@@ -1,11 +1,11 @@
-/*	Circle Area
+/*  Circle Area
 Write a JS function that calculates circle area by given radius. Print the area as it is calculated and then print it rounded to two decimal places.
 The input comes as array of one string element, holding a number.
 The output should be printed to the console on a new line for each result.
 
 Examples
 Input   Output
-5	    78.53981633974483
+5       78.53981633974483
         78.54
 
 */

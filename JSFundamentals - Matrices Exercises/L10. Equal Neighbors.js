@@ -23,21 +23,21 @@ Input                  Output
  */
 
 function equalNeighbots(arr){
-	let matrix = arr.map(row => row.split(" "));
-	let neighbors = 0;
+    let matrix = arr.map(row => row.split(" "));
+    let neighbors = 0;
 
-	for (let row = 0; row < matrix.length - 1; row++){
-		for (let col = 0; col < matrix[row].length; col++){				
-			if(matrix[row][col] == matrix[row + 1][col])     //check vertical
-				neighbors++;			
-			if (matrix[row][col] == matrix[row][col + 1])    //check horizontal
-				neighbors++;
-			if (row == matrix.length - 2 &&                  //check horizontal for last row
-				matrix[row + 1][col] == matrix[row + 1][col + 1])
-				neighbors++;
-		}
-	}
-	console.log(neighbors);
+    for (let row = 0; row < matrix.length - 1; row++){
+        for (let col = 0; col < matrix[row].length; col++){             
+            if(matrix[row][col] == matrix[row + 1][col])     //check vertical
+                neighbors++;            
+            if (matrix[row][col] == matrix[row][col + 1])    //check horizontal
+                neighbors++;
+            if (row == matrix.length - 2 &&                  //check horizontal for last row
+                matrix[row + 1][col] == matrix[row + 1][col + 1])
+                neighbors++;
+        }
+    }
+    console.log(neighbors);
 }
 equalNeighbots(['2 2 5 7 4',
                 '4 0 5 3 4',

@@ -6,12 +6,12 @@ The output should be printed to the console, on a new line for each number.
 */
 
 function bynaryLog(a){
-	let total;
-	let holder;	
-	for (let i = 0; i < a.length; i++) {
-		holder = Math.log2(Number(a[i]));
-		console.log(holder);
-	}	
+    let total;
+    let holder; 
+    for (let i = 0; i < a.length; i++) {
+        holder = Math.log2(Number(a[i]));
+        console.log(holder);
+    }   
 }
 bynaryLog([1024, 1048576]);
 

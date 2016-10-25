@@ -1,5 +1,6 @@
 /*    Process Odd Numbers
-You are given an array of numbers. Write a JS function that prints the elements at odd positions from the array, doubled and in reverse order.
+You are given an array of numbers. Write a JS function that prints 
+the elements at odd positions from the array, doubled and in reverse order.
 The input comes as array of string elements holding numbers.
 The output is printed on the console on a single line, separated by space.
 
@@ -10,20 +11,20 @@ Input                              Output
  */
 
 function processOddNumbers(input){
-	input = input.map(Number);
-	let result = [];
-	for (let i = 0; i < input.length; i++){
-		if( i % 2 != 0){
-			result.unshift(input[i] * 2);
-		}
-	}
+    input = input.map(Number);
+    let result = [];
+    for (let i = 0; i < input.length; i++){
+        if( i % 2 != 0){
+            result.unshift(input[i] * 2);
+        }
+    }
        /* short way
-       let result = arr
+       let result = input
        .filter((num, i) => i % 2 == 1)
        .map(x => 2*x)
        .reverse(); 
        */
-	console.log(result.join(" "));
+    console.log(result.join(" "));
 }
 processOddNumbers(['3', '0', '10', '4', '7', '3']);
 

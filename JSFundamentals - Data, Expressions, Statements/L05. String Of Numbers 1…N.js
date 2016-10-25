@@ -12,7 +12,7 @@ function stringOfNumbers(str){
     let result = "";
     for (let i = 1; i <= str; i++) {
         result += i;
-    }    	
+    }       
     return result;
 }
 stringOfNumbers(5);

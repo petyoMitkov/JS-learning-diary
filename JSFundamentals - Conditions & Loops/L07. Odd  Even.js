@@ -7,9 +7,9 @@ invalid for numbers that contain decimal fractions.
 
 Examples
 Input    Output
-5	     odd
-8	     even
-1.5	     invalid
+5        odd
+8        even
+1.5      invalid
 */
 function oddOrEven(input){
     let num = Number(input);

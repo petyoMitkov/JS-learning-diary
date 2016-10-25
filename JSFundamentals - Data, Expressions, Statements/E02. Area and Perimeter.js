@@ -12,12 +12,12 @@ Input   Output
 */
 
 function areaAndPerimeter([a, b]){ 
-	a = Number(a);
-	b = Number(b);
-	let area = a * b;
-	let perimeter = (a + b) * 2;
-	
-	console.log(area);
-	console.log(perimeter);
+    a = Number(a);
+    b = Number(b);
+    let area = a * b;
+    let perimeter = (a + b) * 2;
+    
+    console.log(area);
+    console.log(perimeter);
 }
 areaAndPerimeter([2, 2]);

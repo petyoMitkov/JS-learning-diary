@@ -19,16 +19,16 @@ Input        Output
  */
 
 function diagonalSums(arr){
-	let matrix = arr.map(row => row.split(" ").map(Number));
-	let mainDiagonal = 0;
-	let secondaryDiagonal = 0;
-	for (let row = 0; row < matrix.length; row++){
-		mainDiagonal += matrix[row][row];
-		secondaryDiagonal += matrix[row][matrix.length - 1 - row];
-	}
-	console.log(mainDiagonal + " " + secondaryDiagonal);
-	//print matrix
-	//console.log(mainDiagonal.map(
-	//row => row.join(" ")).join("\n"));
+    let matrix = arr.map(row => row.split(" ").map(Number));
+    let mainDiagonal = 0;
+    let secondaryDiagonal = 0;
+    for (let row = 0; row < matrix.length; row++){
+        mainDiagonal += matrix[row][row];
+        secondaryDiagonal += matrix[row][matrix.length - 1 - row];
+    }
+    console.log(mainDiagonal + " " + secondaryDiagonal);
+    //print matrix
+    //console.log(mainDiagonal.map(
+    //row => row.join(" ")).join("\n"));
 }
 diagonalSums(['20 40','10 60']);

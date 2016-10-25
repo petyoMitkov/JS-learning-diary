@@ -15,15 +15,15 @@ Input   Output
 [-50]   315
 */
 function gradsToRadians(inputGrads){
-	inputGrads = Number(inputGrads);
-	
-	inputGrads = inputGrads % 400;
-	if (inputGrads < 0) {
-		inputGrads += 400;
-	} 
+    inputGrads = Number(inputGrads);
+    
+    inputGrads = inputGrads % 400;
+    if (inputGrads < 0) {
+        inputGrads += 400;
+    } 
 
-	let result = inputGrads * 0.9;  //index = 360 / 400;
-	console.log(result);
+    let result = inputGrads * 0.9;  //index = 360 / 400;
+    console.log(result);
 }
 gradsToRadians(["100"]);
 gradsToRadians(["-400"]);

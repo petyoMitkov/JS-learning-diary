@@ -1,4 +1,4 @@
-/*	Colorful Numbers
+/*  Colorful Numbers
 Write a JS function to print the numbers from 1 to n. Return a string 
 holding HTML list with the odd lines in blue and even lines in green. 
 See the example for more information. 
@@ -21,17 +21,17 @@ Output: <ul>
           <li><span style='color:blue'>10</span></li>
         </ul>
 */
-    function colorfulNumbers(row){
-    	let rowNumber = Number(row);
-    	let totalString = "<ul>\n";
-    	let color = ""; 
-    	let i;
-    	for (i = 1; i <= rowNumber; i++) {
-    		color = (i % 2 == 0) ? "blue" : "green";
-    		totalString += 
-    		`\t<li><span style="color:${color}">${i}</span></li>\n`
-    	}
-    	totalString += "</ul>";
-    	return totalString;
+function colorfulNumbers(row){
+    let rowNumber = Number(row);
+    let totalString = "<ul>\n";
+    let color = ""; 
+    let i;
+    for (i = 1; i <= rowNumber; i++) {
+        color = (i % 2 == 0) ? "blue" : "green";
+        totalString += 
+        `\t<li><span style="color:${color}">${i}</span></li>\n`
     }
-    document.body.innerHTML = colorfulNumbers(10);
+    totalString += "</ul>";
+    return totalString;
+}
+document.body.innerHTML = colorfulNumbers(10);

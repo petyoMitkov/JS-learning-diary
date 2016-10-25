@@ -1,4 +1,4 @@
-/*	Compound Interest
+/*  Compound Interest
 Write a JS function that calculates the total accumulated value for a monetary 
 deposit by given principal sum, interest rate, compounding frequency and overall
 length. The input comes as an array of strings that need to be parsed as a numbers. 
@@ -14,15 +14,15 @@ Input               Output
 */
 
 function compoundInterest([mony, rate, addingPeriod, timespan]){
-	[mony, rate, addingPeriod, timespan] =
-	[mony, rate, addingPeriod, timespan].map(Number);
+    [mony, rate, addingPeriod, timespan] =
+    [mony, rate, addingPeriod, timespan].map(Number);
 
-	rate = rate / 100; 
-	frequency = 12 / addingPeriod;
+    rate = rate / 100; 
+    frequency = 12 / addingPeriod;
 
-	let total =	mony *
-	 Math.pow((1 + rate / frequency), frequency * timespan);
+    let total = mony *
+     Math.pow((1 + rate / frequency), frequency * timespan);
 
-	console.log(total.toFixed(2));
+    console.log(total.toFixed(2));
 }
 compoundInterest([1500, 4.3, 3, 6]);

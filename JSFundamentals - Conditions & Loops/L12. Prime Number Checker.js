@@ -12,14 +12,14 @@ Input   Output
 */
 
 function primeNumberChecker(input){
-	let num = Number(input);
-	let result;
-	if (num >= 2) {
-		result = ((num % 2 != 0  && num % 3 != 0) || 
-			(num == 2 || num == 3)) ? "true" : "false";
-	} else if (num < 2){
-		result = "false";
-	}
-	console.log(result);
+    let num = Number(input);
+    let result;
+    if (num >= 2) {
+        result = ((num % 2 != 0  && num % 3 != 0) || 
+            (num == 2 || num == 3)) ? "true" : "false";
+    } else if (num < 2){
+        result = "false";
+    }
+    console.log(result);
 }
 primeNumberChecker("81");

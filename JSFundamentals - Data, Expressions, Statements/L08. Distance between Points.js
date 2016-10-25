@@ -8,7 +8,7 @@ The output should be returned as a result of your function.
 Examples
 Input                                     Output
 ['2', '4', '5', '0']                      5
-['2.34', '15.66', '-13.55', '-2.9985']	  24.50778901186315
+['2.34', '15.66', '-13.55', '-2.9985']    24.50778901186315
 
 */
 

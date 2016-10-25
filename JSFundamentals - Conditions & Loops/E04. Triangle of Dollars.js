@@ -5,7 +5,7 @@ element holds the number n (0 < n < 100).
 The output consists of n text lines like shown below.
 
 Examples
-Input	Output
+Input   Output
 4       $
         $$
         $$$
@@ -13,17 +13,17 @@ Input	Output
 */
 
 function solve(input){
-	input = Number(input);
-	let col = 0;
-	let result = "";
+    input = Number(input);
+    let col = 0;
+    let result = "";
 
-	for (let row = 1; row <= input ; row++) {
-		col = row;
-		result = " ";
-		for (let i = 0; i < col; i++) {
-			result += "$";
-		}
-		console.log(result);
-	}
+    for (let row = 1; row <= input ; row++) {
+        col = row;
+        result = " ";
+        for (let i = 0; i < col; i++) {
+            result += "$";
+        }
+        console.log(result);
+    }
 }
 solve(6);

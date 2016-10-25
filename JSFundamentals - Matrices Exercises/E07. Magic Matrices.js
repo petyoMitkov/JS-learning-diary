@@ -19,32 +19,32 @@ rownput          Output
  */
 
 function magicMatrix(arr){
-	let matrix = arr.map(row => row.split(" ").map(Number));
-	let mainSum = matrix[0].reduce((a,b) => (a + b));
+    let matrix = arr.map(row => row.split(" ").map(Number));
+    let mainSum = matrix[0].reduce((a,b) => (a + b));
 
     let sumRow;
-	for(let row = 1; row < matrix.length; row++){
-		sumRow = 0;
-		for(let col = 0; col < matrix[0].length; col++){
-			sumRow += matrix[row][col];
-		}
-		//sumRow = matrix[row].reduce((a, b) => (a + b)); same as for loop 
-		if (mainSum != sumRow) {
-			return false;
-		}
-	}
-	
-	let sumCol;
-	for (let col = 0; col < matrix[0].length; col++){
-		sumCol = 0;
-		for (let row = 0; row < matrix.length; row++){
-			sumCol += matrix[row][col];
-		}
-		if (sumCol != mainSum) {
-			return false;
-		}
-	}
-	return true;
+    for(let row = 1; row < matrix.length; row++){
+        sumRow = 0;
+        for(let col = 0; col < matrix[0].length; col++){
+            sumRow += matrix[row][col];
+        }
+        //sumRow = matrix[row].reduce((a, b) => (a + b)); same as for loop 
+        if (mainSum != sumRow) {
+            return false;
+        }
+    }
+    
+    let sumCol;
+    for (let col = 0; col < matrix[0].length; col++){
+        sumCol = 0;
+        for (let row = 0; row < matrix.length; row++){
+            sumCol += matrix[row][col];
+        }
+        if (sumCol != mainSum) {
+            return false;
+        }
+    }
+    return true;
 }
 magicMatrix(['4 5 6', 
              '6 5 4',

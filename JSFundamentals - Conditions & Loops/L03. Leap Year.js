@@ -6,10 +6,10 @@ The output should be printed to the console.
 Print yes if the year is leap and no otherwise.
 
 Examples
-Input	Output
-1999	no
-2000	yes
-1900	no
+Input   Output
+1999    no
+2000    yes
+1900    no
 */
 
 function leapYear(inputYear){

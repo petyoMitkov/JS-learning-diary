@@ -1,1 +1,1 @@
-# JavaScript Exercises
+# JavaScript Exercises from SoftUni

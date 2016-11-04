@@ -1,0 +1,107 @@
+<!--  From JSON to HTML Table (resizable)
+You’re tasked with creating an HTML table of students and their scores. You will 
+receive a single string representing an array of objects, the table’s headings 
+should be equal to the objects’ keys, while each object’s values should be a new 
+entry in the table. Any text values in an object should be escaped, in order to 
+avoid introducing dangerous code into the HTML. 
+Object’s keys will always be the same. 
+The input comes as an array of strings containing a single string - the array 
+of objects.The output should be printed on the console - for each entry row 
+in the input print the object representing it.
+HTML
+You are provided with an HTML file to test your table in the browser
+
+Examples
+Input
+[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]
+Output
+<table>
+   <tr><th>Name</th><th>Price</th></tr>
+   <tr><td>Tomatoes &amp; Chips</td><td>2.35</td></tr>
+   <tr><td>J&amp;B Chocolate</td><td>0.96</td></tr>
+</table>
+
+Input
+[{"Name":"Pesho <div>-a","Age":20,"City":"Sofia"},
+ {"Name":"Gosho","Age":18,"City":"Plovdiv"},
+ {"Name":"Angel","Age":18,"City":"Veliko Tarnovo"}]
+Output
+<table>
+   <tr><th>Name</th><th>Age</th><th>City</th></tr>
+   <tr><td>Pesho &lt;div&gt;-a</td><td>20</td><td>Sofia</td></tr>
+   <tr><td>Gosho</td><td>18</td><td>Plovdiv</td></tr>
+   <tr><td>Angel</td><td>18</td><td>Veliko Tarnovo</td></tr>
+</table>
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FromJSONToHTMLTable</title>
+  <style>
+    table,th{
+        border: groove;
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid black;
+    }
+    td,th{
+        padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+  </div>
+  <script>  
+      // resizable table
+      function fromJSONToHTMLTable(input){  // JSON Array of Objects
+          let arr = JSON.parse(input);
+          let html = "<table>\n";
+
+          html += "  <tr>";                 // print first table row
+          for (let key of Object.keys(arr[0])) {      // get keys from first object 
+              html += `<th>${htmlEscape(key)}</th>`;  
+          }
+          html += "</tr>\n";
+
+          for (let obj of arr) {           //print others rows 
+              html += "  <tr>";
+              for (let key of Object.keys(obj)){       //get other rows Object kyes
+                  html += `<td>${htmlEscape(obj[key])}</td>`;                 
+              }
+              html += "</tr>\n";
+          }
+          html += "</table>";
+
+          return html;
+
+          //inner functions
+          function htmlEscape(text) {
+              text = new String (text);    //if text is Number convert to string
+              let mapChar = {'"': '&quot;', '&': '&amp;', 
+                  "'": '&#39;', '<': '&lt;', '>': '&gt;'};
+              return text.replace(/[\"&'<>]/g, char => mapChar[char]);
+          }
+      }
+      /* 
+      window.onload = function(){                              //table 2cols x 3rows
+          let container = document.getElementById('wrapper');
+          container.innerHTML = fromJSONToHTMLTable([
+          '[{"Name":"Tomatoes & Chips","Price":2.35},' + 
+          '{"Name":"J&B Chocolate","Price":0.96}]']);
+      };
+      */
+      window.onload = function(){                             //table 3cols x 4rows
+          let container = document.getElementById('wrapper');
+          container.innerHTML = fromJSONToHTMLTable([
+            '[{"Name":"Pesho <div>-a","Age":20,"City":"Sofia"}, ' +  
+            '{"Name":"Gosho","Age":18,"City":"Plovdiv"},' + 
+            '{"Name":"Angel","Age":18,"City":"Veliko Tarnovo"}]']);
+      };
+  </script>
+</body>
+</html>

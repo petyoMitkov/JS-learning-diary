@@ -12,13 +12,13 @@ function solve(inputArrOfStr) {
             for (let j = 0; j < matrixName[i].length; j++) {
                 row += matrixName[i][j]; 
             }
-            console.log(row + "\n");
+            console.log(row);
         }
     }
 
     //print matrix by forEach()
     function printMatrixFunctionally(matrixName) {
-        matrixName.forEach(row => console.log(row.join("") + "\n"));
+        matrixName.forEach(row => console.log(row.join("")));
     }
 }
 solve(["abnbjs", "xoBab", "Abmbh", "aabab", "ababvvvv"]);

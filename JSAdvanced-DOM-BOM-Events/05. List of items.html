@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>05. List of items</title>
+</head>
+<body>
+
+<h1>List of items</h1>
+<ul id="items"><li>First</li><li>Second</li></ul>
+<input type="text" id="newItemText">
+<input type="button" value="Add" onclick="addItem()">
+
+<script type="text/javascript">
+    function addItem() {
+      let textInput = document.getElementById("newItemText").value;
+      let newLi = document.createElement("li");
+      newLi.textContent = textInput;
+
+      let getParentItem = document.getElementById("items");
+      getParentItem.appendChild(newLi);
+    }
+</script>
+
+</body>
+</html>

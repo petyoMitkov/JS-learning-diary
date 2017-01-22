@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouse in Gradient</title>
+  <link rel="stylesheet" href="gradient.css" />
+  <script src="gradient.js"></script>
+  <style type="text/css">
+    #gradient-box {
+      width: 300px;
+      border: 2px solid lightgrey;
+    }
+    #gradient-box:hover {
+     border: 2px solid black;
+    }
+    #gradient {
+      height: 30px;
+      color: white;
+      text-shadow: 1px 1px 10px black;
+      text-align: center;
+      line-height: 30px;
+      background: linear-gradient(to right, black, white);
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body onload="attachGradientEvents()">
+
+  <div id="gradient-box">
+    <div id="gradient">Hover me!</div>
+  </div>
+  <div id="result"></div>
+  <div id="positionY"></div>
+
+  <script type="text/javascript">
+    function attachGradientEvents() {
+      let gradient = document.getElementById("gradient");
+      gradient.addEventListener("mousemove", gradientMove);
+      gradient.addEventListener("mouseout", gradientOut);
+
+      function gradientMove(event) {
+        console.dir(event);
+        let power = event.offsetX / (event.target.clientWidth - 1);
+        power = Math.trunc(power * 100);
+        document.getElementById("result").textContent = "PositionX = "+power + '%';
+
+        let positionY = event.offsetY / (event.target.clientHeight - 1);
+        positionY = Math.trunc(positionY * 100);
+        document.getElementById("positionY").textContent = "PositionY = " + positionY + "%";
+
+      }
+      function gradientOut() {
+        document.getElementById("result").textContent = "PositionX = -";
+        document.getElementById("positionY").textContent = "PositionY = -";
+      }
+    }
+    
+  </script>
+
+</body>
+</html>

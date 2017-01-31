@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03. Countries Table</title>
+  <style>
+      td, th { background: #DDD; padding: 5px 10px }
+      input[type='text'] { width: 60px }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+</head>
+<body>
+<table id="countriesTable">
+  <tr>
+    <th>Country</th>
+    <th>Capital</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td><input type="text" id="newCountryText" /></td>
+    <td><input type="text" id="newCapitalText" /></td>
+    <td><a href="#" id="createLink">[Create]</a></td>
+  </tr>
+</table>
+<script>$(() => initializeTable())</script>
+
+<script type="text/javascript">
+    function initializeTable() {
+        $("#createLink").click(function () {
+            let country = $("#newCountryText").val();
+            let capital = $("#newCapitalText").val();
+
+            creatRow(country, capital);
+
+        });
+
+        function creatRow(country, capital) {            
+            let addRow = $("<tr>") //.append('<tr><td><td><td>');
+               .append($("<td>").text(country))
+               .append($("<td>").text(capital))
+               .append($("<td>").text("test"));
+
+            $("#countriesTable").append(addRow);                
+        }
+    }
+</script>
+</body>
+</html>

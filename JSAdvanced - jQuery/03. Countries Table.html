@@ -26,22 +26,51 @@
 
 <script type="text/javascript">
     function initializeTable() {
-        $("#createLink").click(function () {
-            let country = $("#newCountryText").val();
-            let capital = $("#newCapitalText").val();
+        creatRow("Bulgaria", "Sofia");
+        creatRow("Germany", "Berlin");
+        creatRow("Russia", "Moscow");
+        creatRow("Bulgaria", "Sofia");
+        creatRow("Germany", "Berlin");
+        creatRow("Russia", "Moscow");
 
+        $("#createLink").click(creatCountry);
+
+        function creatCountry() {
+            country = $("#newCountryText").val();
+            capital = $("#newCapitalText").val();
             creatRow(country, capital);
-
-        });
-
+            $("#newCountryText").val("");
+            $("#newCapitalText").val("");
+        };
         function creatRow(country, capital) {            
             let addRow = $("<tr>") //.append('<tr><td><td><td>');
                .append($("<td>").text(country))
                .append($("<td>").text(capital))
-               .append($("<td>").text("test"));
+               .append($("<td>")
+                  .append($("<a href='#'>[Up]</a>"))
+                  .append(" ")
+                  .append($("<a href='#'>[Down]</a>"))
+                  .append(" ")
+                  .append($("<a href='#'>[Delete]</a>").click(deleteRow)));
 
-            $("#countriesTable").append(addRow);                
-        }
+            //fadeIn when add row
+            addRow.css("display", "none");
+            $("#countriesTable").append(addRow);
+            addRow.fadeIn(800);
+        };
+        function deleteRow() {
+            let row = $(this).parent();
+            row.css("background-color", "red")
+                .prev().css("background-color", "red")
+                .prev().css("background-color", "red");
+
+            row.parent().fadeOut(1000, function () {
+                $(this).remove();
+            });
+        };
+
+
+
     }
 </script>
 </body>

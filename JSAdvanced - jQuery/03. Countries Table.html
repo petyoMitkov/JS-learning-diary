@@ -29,8 +29,8 @@
         creatRow("Bulgaria", "Sofia");
         creatRow("Germany", "Berlin");
         creatRow("Russia", "Moscow");
-        creatRow("Bulgaria", "Sofia");
-        creatRow("Germany", "Berlin");
+        creatRow("BG", "BSL");
+        creatRow("Russia", "Moscow");
         creatRow("Russia", "Moscow");
 
         $("#createLink").click(creatCountry);
@@ -47,26 +47,59 @@
                .append($("<td>").text(country))
                .append($("<td>").text(capital))
                .append($("<td>")
-                  .append($("<a href='#'>[Up]</a>"))
+                  .append($("<a href='#'>[Up]</a>").click(moveUp))
                   .append(" ")
-                  .append($("<a href='#'>[Down]</a>"))
+                  .append($("<a href='#'>[Down]</a>").click(moveDown))
                   .append(" ")
                   .append($("<a href='#'>[Delete]</a>").click(deleteRow)));
 
             //fadeIn when add row
             addRow.css("display", "none");
             $("#countriesTable").append(addRow);
-            addRow.fadeIn(800);
+            addRow.fadeIn(500);
+            fixRowLinks();
         };
         function deleteRow() {
             let row = $(this).parent();
-            row.css("background-color", "red")
-                .prev().css("background-color", "red")
-                .prev().css("background-color", "red");
+            row.css("background-color", "#E96B6B")
+                .prev().css("background-color", "#E96B6B")
+                .prev().css("background-color", "#E96B6B");
 
-            row.parent().fadeOut(1000, function () {
+            row.parent().fadeOut(2500, function () {
                 $(this).remove();
             });
+        };
+        function moveUp() {
+        	let row = $(this).parent().parent();
+        	row.css("color", "green");
+        	row.fadeOut(800, function() {
+        		row.insertBefore(row.prev());
+        		row.fadeIn(800);
+        		fixRowLinks();
+        	});
+        	
+        };
+        function moveDown() {
+        	let row = $(this).parent().parent();
+        	row.css("color", "#F3830A");
+        	row.fadeOut(800, function() {
+        		row.insertAfter(row.next());
+        		row.fadeIn(800);
+        		fixRowLinks();        		
+        	});
+        };
+        function fixRowLinks() {
+        	// Show all links in the table
+            $('#countriesTable a').css('display', 'inline');
+
+        	// Hide [Up] link in first table data row
+        	let tableRow = $("#countriesTable tr");
+        	$(tableRow[2]).find("a:contains('Up')")
+        		.css("display", "none");
+
+    		// Hide the [Down] link in the last table row
+    		$(tableRow[tableRow.length - 1]).find("a:contains('Down')")
+    			.css("display", "none");
         };
 
 

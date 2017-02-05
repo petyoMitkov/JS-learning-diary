@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selectable Towns</title>
+  <style>
+    li {
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px;
+    }
+    ul { padding:0; }
+   .selected {
+      background-color: #3493B6;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<h2>Towns</h2>
+<ul id="items">
+  <li>Sofia</li>
+  <li>Varna</li>
+  <li>Plovdiv</li>
+  <li>Bourgas</li>
+  <li>Rousse</li>
+</ul>
+<button id="showTownsButton">Show Towns</button>
+<div id="selectedTowns"></div>
+
+<script>$(() => attachEvents())</script>
+
+<script type="text/javascript">
+  function attachEvents() {
+    $("#items li").on("click", selectTown);
+    $("#showTownsButton").on("click", displaySelectedTowns);
+
+    function selectTown() {
+      let li = $(this);
+      if (li.attr("data-selected")) {
+        li.removeAttr("data-selected");
+        li.removeClass("selected");
+      } else {
+        li.attr("data-selected", "true");
+        li.addClass("selected");
+      }
+    }
+    function displaySelectedTowns() {
+      let selLi = $("#items li[data-selected=true]");
+      let towns = selLi.toArray()
+        .map(li => li.textContent)
+        .join(", ");
+
+      $("#selectedTowns").text("Selected towns: " + towns);
+    }   
+  }
+</script>
+
+</body>
+</html>

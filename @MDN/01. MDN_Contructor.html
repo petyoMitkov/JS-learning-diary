@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MDM Object-oriented JavaScript example</title>
+  //https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
+</head>
+
+<body>
+  <div>
+    <label for="jscode">Enter code:</label>
+    <input type="text" id="jscode">
+    <button>Submit code</button>
+  </div>
+  <p></p>
+
+<script>
+    var input = document.querySelector('input');
+    var btn = document.querySelector('button');
+    var para = document.querySelector('p');
+    btn.onclick = function() {
+        var code = input.value;
+        para.textContent = eval(code);
+    }
+
+    function Person(first, last, age, gender, interests) {
+        this.name = {
+            first,
+            last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.bio = function() {
+            let alertText = "";
+            alertText +=  this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old.';
+            if (this.gender == "male") {
+                alertText += " He likes "; 
+            } else if (this.gender == "fmale") {
+                alertText += " She likes "; 
+            } 
+            let interestsList = this.interests;
+            for (index in interestsList) {              
+                if (index >= 0) {
+                    alertText += interestsList[index];
+                    if (index++ < interestsList.length - 1 && interestsList.length <=2) {
+                        alertText += " and ";
+                    }   
+                    if (index++ < interestsList.length  && interestsList.length > 2) {
+                        alertText += ", ";
+                    }                       
+                } 
+            }
+            alertText += ".";
+            alert(alertText);
+        };
+        this.greeting = function() {
+            alert('Hi! I\'m ' + this.name.first + '.');
+        };
+    };
+    var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+    var person2 = new Person('Mara', 'Otvarachkata', 25, 'fmale', ['music', 'skiing', 'swimming', 'football']);
+
+    //For testing entered next code in input field
+    //person1['age']
+    //person1.interests[1]
+    //person1.bio()
+    ////person2.bio()
+</script>
+
+</body>
+</html>

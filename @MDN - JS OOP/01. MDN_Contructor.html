@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>MDM Object-oriented JavaScript example</title>
-  //https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
+  <!--https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS-->
 </head>
 
 <body>
@@ -23,6 +23,7 @@
         para.textContent = eval(code);
     }
 
+    //Person type
     function Person(first, last, age, gender, interests) {
         this.name = {
             first,
@@ -57,9 +58,20 @@
         this.greeting = function() {
             alert('Hi! I\'m ' + this.name.first + '.');
         };
-    };
-    var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
-    var person2 = new Person('Mara', 'Otvarachkata', 25, 'fmale', ['music', 'skiing', 'swimming', 'football']);
+    }
+    
+    //method: Person::farewell()
+    Person.prototype.farewell = function() {
+        alert(this.name.first + " has left the building. Bye for now!");
+    }
+
+    let person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+    let person2 = new Person('Mara', 'Otvarachkata', 25, 'fmale', ['music', 'skiing', 'swimming', 'football']);
+
+    // Create another object instance from that constructor property
+    //var person3 = new person1.constructor('Karen', 'Stephenson', 26, 'female', ['playing drums', 'mountain climbing']);
+   
+    //console.log(person1.name.first + ' ' + person1.name.last);
 
     //For testing entered next code in input field
     //person1['age']

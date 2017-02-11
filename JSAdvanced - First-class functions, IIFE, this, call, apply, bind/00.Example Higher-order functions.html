@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>00.Example Higher-order functions</title>
+  <!--Higher-order functions / Take other functions as argument or return a function as result-->
+</head>
+<body>
+
+
+<script type="text/javascript">
+    function invokeAll(functionsArr) {
+        for (let func of functionsArr) {
+            func();
+        }
+    }
+
+    let last = function() {console.error("last");}
+
+    invokeAll([() => console.info("first"), 
+        () => console.warn("second"), last]);
+
+</script>
+</body>
+</html>

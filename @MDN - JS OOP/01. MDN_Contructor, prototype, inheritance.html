@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MDM Object-oriented JavaScript example</title>
+  <!--https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS-->
+</head>
+
+<body>
+  <div>
+    <label for="jscode">Enter code:</label>
+    <input type="text" id="jscode">
+    <button>Submit code</button>
+  </div>
+  <p></p>
+
+<script>
+    var input = document.querySelector('input');
+    var btn = document.querySelector('button');
+    var para = document.querySelector('p');
+    btn.onclick = function() {
+        var code = input.value;
+        para.textContent = eval(code);
+    }
+
+    //Person type - constructor
+    function Person(first, last, age, gender, interests) {
+        this.name = {
+            first,
+            last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+    }
+
+    Person.prototype.bio = function() {
+        let alertText = "";
+        alertText +=  this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old.';
+        if (this.gender == "male") {
+            alertText += " He likes "; 
+        } else if (this.gender == "female") {
+            alertText += " She likes "; 
+        } 
+        let interestsList = this.interests;
+        for (index in interestsList) {              
+            if (index >= 0) {
+                alertText += interestsList[index];
+                if (index++ < interestsList.length - 1 && interestsList.length <=2) {
+                    alertText += " and ";
+                }   
+                if (index++ < interestsList.length  && interestsList.length > 2) {
+                    alertText += ", ";
+                }                       
+            } 
+        }
+        alertText += ".";
+        alert(alertText);
+    };
+
+    Person.prototype.greeting = function() {
+
+        alert('Hi! I\'m ' + this.name.first + '.');
+    };
+    
+    //method: Person::farewell()
+    Person.prototype.farewell = function() {
+
+        alert(this.name.first + " has left the building. Bye for now!");
+    }
+
+    let person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+    let person2 = new Person('Mara', 'Otvarachkata', 25, 'female', ['music', 'skiing', 'swimming', 'football']);
+
+    //Teacher Type - constructor
+    function Teacher(first, last, age, gender, interests, subject) {
+        Person.call(this, first, last, age, gender, interests);
+
+        this.subject = subject;
+    }
+
+    Teacher.prototype = Object.create(Person.prototype);
+    Teacher.prototype.constructor = Teacher;
+
+    Teacher.prototype.greeting = function() {
+        let prefix;
+
+        if (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+        prefix = 'Mr.';
+        } else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+        prefix = 'Mrs.';
+        } else {
+        prefix = 'Mx.';
+        }
+
+        alert('Hello! My name is ' + prefix + ' ' + this.name.last + ' and I teach ' + this.subject + '.');
+    }
+
+    let teacher1 = new Teacher('Ivan', 'Petrov', 55, 'male', ['box'], 'Computer science');
+    
+    
+    /* //For testing entered next code in input field
+    person1['age']
+    person1.interests[1]
+    person1.bio()
+    person2.bio()
+
+    Teacher.prototype
+
+    teacher1.name.first;
+    teacher1.interests[0];
+    teacher1.bio();
+    teacher1.subject;
+    teacher1.greeting();
+    */
+</script>
+
+</body>
+</html>

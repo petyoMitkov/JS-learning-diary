@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>02. Command Processor</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function processCommands(commands) {
+        //Create Object by Closure which returns functions
+        let commandProcessor = (function() {
+            let text = "";
+            return {
+                append: (newText) => text += newText,
+                removeStart: (count) => text = text.slice(count),
+                removeEnd: (count) => text = text.slice(0, text.length - count),
+                print: () => console.log(text)
+            }
+        })();
+
+        //Read the commands 
+        for (let cmd of commands) {
+            let [cmdName, arg] = cmd.split(" ");
+            commandProcessor[cmdName](arg);
+        }
+    }
+
+    processCommands(['append hello', 'append again', 
+                     'removeStart 3', 'removeEnd 4', 'print']);
+
+    processCommands(['append 123', 'print', 'append 45', 'print', 
+                     'removeStart 2', 'print', 'removeEnd 1', 'print']);
+</script>
+</body>
+</html>

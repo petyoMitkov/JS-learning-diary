@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>00.1 IIFE, Closure</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    (function() {console.log("invoked");})(); 
+    //let testIIFE = function() {console.log("Test IIFE");}();
+    
+    //IIFE
+    (function(arr) {
+        let sum = 0;
+        for (let x of arr)
+            sum += x;        
+        console.log(sum);
+    })([10, 20, 30])
+    
+    //Closure
+    let f = (function() {
+        let counter = 0;
+        return function() {
+            console.log(counter++);
+        }
+    })();
+
+  
+</script>
+
+</body>
+</html>

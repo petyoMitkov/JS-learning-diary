@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Example: Unit testing in Browser</title>
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.min.css">
+</head>
+<body>
+  <div style="padding-left:  10px;"> 
+  <h1>Example: Unit testing in Browser</h1></div>
+  <div id="mocha"><p><a href=".">Index</a></p></div>
+  <div id="messages"></div>
+  <div id="fixtures"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+  <script src="01. Sum of Numbers.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="test/01. Sum of Numbers - tests.js"></script>
+  <script>mocha.run();</script>
+</body>
+</html>

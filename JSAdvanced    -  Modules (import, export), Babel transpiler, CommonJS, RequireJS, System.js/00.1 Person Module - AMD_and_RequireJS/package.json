@@ -1,0 +1,7 @@
+{
+  "name": "Person module with AMD_and_RequireJS",
+  "version": "0.0.2",
+  "dependencies": {
+    "requirejs": "^2.3.3"
+  }
+}

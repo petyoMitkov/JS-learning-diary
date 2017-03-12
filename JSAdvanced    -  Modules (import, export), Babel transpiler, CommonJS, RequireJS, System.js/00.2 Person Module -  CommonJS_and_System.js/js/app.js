@@ -2,8 +2,6 @@
  
 let Person = require("./person.js");
 
-let p = new Person("Joro");
+let p = new Person("Ivan Ivanov");
+return console.log(p.toString());
 
-console.log("test");
-
-//result.Person = Person;

@@ -1,6 +1,6 @@
 {
-  "name": "Person Modules - CommoneJS and System.js",
-  "version": "0.0.2",
+  "name": "application-name",
+  "version": "0.0.1",
   "dependencies": {
     "systemjs": "^0.20.9"
   }

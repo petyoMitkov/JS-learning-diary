@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Example Modules - CommonJS and System.js</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
-<h1>Example Modules - CommonJS and System.js</h1>
 
-<!--Configuring SystemJS-->
 <script src="node_modules/systemjs/dist/system.js">
 </script>
-
-<!--Configure and load app's path-->
 <script>
-  System.config({ meta: { format: 'cjs' } });
-  System.import('./js/app.js');  // problem comes from here !!!!
+    System.config({ meta: { format: 'cjs' } });
+    System.import('./js/app.js');
 </script>
-
 
 </body>
 </html>

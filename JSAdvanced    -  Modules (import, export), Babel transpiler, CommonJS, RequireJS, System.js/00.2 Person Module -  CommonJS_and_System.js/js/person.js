@@ -8,6 +8,6 @@ class Person {
     }
 }
 
-console.log("It works");
+//console.log("Person.js works");
 
 module.exports = Person;
